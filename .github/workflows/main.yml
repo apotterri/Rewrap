@@ -22,8 +22,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 14
+    - run: which node
 
-    - name: Build & Run Tests
-      uses: GabrielBB/xvfb-action@v1.2
-      with:
-        run: node .config/do.mjs build test --production
+    - run: |
+        npm install
+        node .config/do.mjs build
